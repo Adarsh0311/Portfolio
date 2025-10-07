@@ -13,3 +13,108 @@ a.active > .nav-indicator {
     background-color: #f1f5f9;
 }
 
+/* Transition Styles */
+.name-link,
+.job-title {
+  transition: color 0.3s ease-in-out;
+}
+
+.name-link:hover {
+  color: #fbbf24;
+}
+
+.job-title:hover {
+  color: #fbbf24;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Create a reusable class to apply the animation */
+.animate-fade-in-up {
+  /* Set initial state to invisible for elements that will animate */
+  opacity: 0; 
+  animation-name: fadeIn-up;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+  /* Ensures the element stays visible after the animation finishes */
+  animation-fill-mode: forwards; 
+}
+
+/* Create utility classes for staggering the animation */
+.animation-delay-200ms {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400ms {
+  animation-delay: 400ms;
+}
+
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Keyframes for sliding in from the RIGHT */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Reusable classes to apply the animations */
+.animate-fade-in-left,
+.animate-fade-in-right {
+  opacity: 0; /* Initial state */
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards; /* Stay visible after animation */
+}
+
+.animate-fade-in-left {
+  animation-name: fadeInLeft;
+}
+
+.animate-fade-in-right {
+  animation-name: fadeInRight;
+}
+
+/* Utility classes for staggering the animation */
+.animation-delay-200ms {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400ms {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600ms {
+  animation-delay: 600ms;
+}
+
+.animation-delay-800ms {
+  animation-delay: 800ms;
+}

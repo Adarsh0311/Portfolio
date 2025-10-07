@@ -100,10 +100,19 @@ export const skills: Skill[] = [
 export const projects: Project[] = [
     {
         title: 'ShopSphere E-commerce Platform',
-        description: 'A full-featured e-commerce platform built with Angular and Spring Boot.',
-        tags: ['Java','Angular', 'Spring Boot', 'E-commerce', 'REST API', 'PostgreSQL', 'AWS'],
-        imageUrl: 'assets/images/projects/shop-sphere.png',
+        description: 'Full-stack e-commerce platform built with Spring Boot & Angular. Features comprehensive product catalog, order management, Stripe payment integration, SQS messaging, and AWS deployment. Production-ready with PostgreSQL, RESTful API endpoints, and cloud infrastructure.',
+        tags: ['Java', 'Angular', 'Spring Boot', 'E-commerce', 'REST API', 'PostgreSQL', 'AWS'],
+        imageUrl: '',
         sourceUrl: 'https://github.com/Adarsh0311/shopsphere-backend',
+        enhancedDescription: signal(''),
+        isEnhancing: signal(false)
+    },
+    {
+        title: 'Task Management Application',
+        description: 'A comprehensive task management backend system built with Spring Boot and PostgreSQL, featuring file attachments, dynamic filtering with JPA Specifications, and complete CRUD operations for efficient task organization.',
+        tags: ['Spring Boot', 'Java', 'PostgreSQL', 'Spring Data JPA', 'REST API', 'File Upload', 'Dynamic Filtering'],
+        imageUrl: '',
+        sourceUrl: 'https://github.com/Adarsh0311/task-management-application',
         enhancedDescription: signal(''),
         isEnhancing: signal(false)
     },
@@ -114,13 +123,13 @@ export const education: Education[] = [
         institution: 'Northwest Missouri State University',
         degree: 'Master of Science, Information Systems',
         link: 'https://www.nwmissouri.edu/',
-        period: '2024 - 2025'
+        period: 'Aug 2024 - Dec 2025'
     },
     {
         institution: 'National University of Computer and Emerging Sciences',
         degree: 'Bachelor of Science, Computer Science',
         link: 'https://www.nu.edu.pk/',
-        period: '2017 - 2021'
+        period: 'Aug 2017 - May 2021'
     }
 ];
 
