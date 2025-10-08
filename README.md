@@ -1,27 +1,51 @@
-# MyPortfolio
+# Adarsh Kumar - Personal Portfolio
+This repository contains the source code for my personal portfolio website, built with Angular and styled with Tailwind CSS. This project showcases my skills and experience with modern web technologies and personal projects.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.17.
+[View Live Site](https://adarshkumar-dev.netlify.app/)
 
-## Development server
+<img width="1871" height="897" alt="image" src="https://github.com/user-attachments/assets/66689cf5-6599-4c35-936b-8ef1ce5ec051" />
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Features
+- Single Page Application (SPA): A seamless, fast, and modern user experience built on the Angular framework.
+- Fully Responsive Design: The layout is optimized for all screen sizes, from mobile phones to desktop monitors.
+- CI/CD Pipeline: Deployed via Netlify with continuous integration and deployment connected directly to the main branch of this repository.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Tech Stack
+- Frontend: Angular, TypeScript
+- Styling: Tailwind CSS
+- Deployment: Netlify
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Running the Project Locally
+To get a local copy up and running, follow these simple steps.
+### Prerequisites
+- Node.js and npm installed. You can download them from nodejs.org.
+- Angular CLI installed globally: npm install -g @angular/cli
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  
+## Installation & Setup
+Clone the repository:
+git clone [https://github.com/adarsh0311/portfolio.git](https://github.com/adarsh0311/portfolio.git)
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Navigate to the project directory:
+`cd portfolio`
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Install NPM packages:
+`npm install`
+
+
+#### Run the development server:
+`ng serve`
+
+Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
+
+## Building for Production
+To create a production-ready build of the application, run the following command:
+`ng build --configuration production`
+
+
+This will create a dist/ directory with all the optimized, static files needed for deployment.
