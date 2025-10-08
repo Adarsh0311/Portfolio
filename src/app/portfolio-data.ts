@@ -71,29 +71,17 @@ export const experiences: Experience[] = [
 ];
 
 export const skills: Skill[] = [
-    {
-        category: 'Core Languages',
-        technologies: ['Java', 'C#', 'TypeScript', 'JavaScript', 'Python', 'C++']
+       {
+        category: 'Languages & Databases',
+        technologies: ['Java', 'C#', 'TypeScript', 'JavaScript', 'Python', 'SQL', 'PostgreSQL', 'MySQL']
     },
     {
-        category: 'Backend Frameworks & Technologies',
-        technologies: ['Spring Boot', '.NET Core', 'REST API', 'Hibernate', 'Spring Data JPA', 'ASP.NET MVC', 'Node.js', 'Express.js']
+        category: 'Frameworks & Libraries',
+        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Angular', 'Hibernate', 'ASP.NET MVC', 'REST API']
     },
     {
-        category: 'Frontend',
-        technologies: ['Angular', 'HTML', 'CSS', 'Bootstrap']
-    },
-    {
-        category: 'Databases & ORM',
-        technologies: ['PostgreSQL', 'MySQL', 'SQL', 'NoSQL', 'Entity Framework']
-    },
-    {
-        category: 'Cloud & DevOps',
-        technologies: ['AWS (EC2, S3, RDS, Lambda)', 'Docker', 'CI/CD', 'Git', 'GitHub']
-    },
-    {
-        category: 'Project Management & Tools',
-        technologies: ['JIRA', 'Agile/Scrum', 'Postman', 'IntelliJ IDEA', 'Visual Studio Code']
+        category: 'Cloud, Tools & Methods',
+        technologies: ['AWS (EC2, S3, Lambda)', 'Git', 'CI/CD', 'GitHub', 'JIRA', 'Agile/Scrum', 'Postman']
     }
 ];
 
