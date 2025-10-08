@@ -22,7 +22,6 @@ export class AppComponent implements AfterViewInit, OnDestroy {
   education: Education[] = education;
 
 
-  //SIGNALS for reactive state
   activeSection = signal<string>('about');
   mouseX = signal<number>(0);
   mouseY = signal<number>(0);
@@ -41,7 +40,7 @@ export class AppComponent implements AfterViewInit, OnDestroy {
     return `radial-gradient(600px at ${this.mouseX()}px ${this.mouseY()}px, rgba(29, 78, 216, 0.15), transparent 80%)`;
   }
 
-  // Smooth scrolling for navigation
+
   scrollTo(sectionId: string, event: Event) {
     event.preventDefault();
     document.getElementById(sectionId)?.scrollIntoView({

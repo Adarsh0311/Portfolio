@@ -77,11 +77,11 @@ export const skills: Skill[] = [
     },
     {
         category: 'Frameworks & Libraries',
-        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Angular', 'Hibernate', 'ASP.NET MVC', 'REST API']
+        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Angular', 'Hibernate', 'ASP.NET MVC']
     },
     {
         category: 'Cloud, Tools & Methods',
-        technologies: ['AWS (EC2, S3, Lambda)', 'Git', 'CI/CD', 'GitHub', 'JIRA', 'Agile/Scrum', 'Postman']
+        technologies: ['AWS (EC2, S3, Lambda, SQS, SNS)', 'Git', 'CI/CD', 'JIRA', 'Agile/Scrum', 'Postman']
     }
 ];
 
