@@ -77,7 +77,7 @@ export const skills: Skill[] = [
     },
     {
         category: 'Frameworks & Libraries',
-        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Angular', 'Hibernate', 'ASP.NET MVC']
+        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Express', 'Angular']
     },
     {
         category: 'Cloud, Tools & Methods',
@@ -87,8 +87,15 @@ export const skills: Skill[] = [
 
 export const projects: Project[] = [
     {
+        title: 'Campus Inspection System',
+        description: 'Full-stack application built to digitize and manage facility inspections. The client is an Angular single-page application that provides Admin tools for user management and creating dynamic inspection checklists. The backend API, built with Node.js and Express, handles all data processing and authentication, leveraging Prisma as the ORM to manage the PostgreSQL database. The system enables field technicians and admins to perform and submit paperless inspection reports.',
+        tags: ['Node.js', 'Express', 'Prisma', 'TypeScript', 'Angular',  'PostgreSQL', 'Bootstrap', 'Full-Stack'],
+        imageUrl: '',
+        sourceUrl: 'https://github.com/Adarsh0311/campus-inspection-system'
+    },
+    {
         title: 'ShopSphere E-commerce Platform',
-        description: 'Full-stack e-commerce platform built with Spring Boot & Angular. Features comprehensive product catalog, order management, Stripe payment integration, SQS messaging, and AWS deployment. Production-ready with PostgreSQL, RESTful API endpoints, and cloud infrastructure.',
+        description: 'E-commerce platform built with Spring Boot & Angular. Features comprehensive product catalog, order management, Stripe payment integration, SQS messaging, and AWS deployment. Production-ready with PostgreSQL, RESTful API endpoints, and cloud infrastructure.',
         tags: ['Java', 'Angular', 'Spring Boot', 'E-commerce', 'REST API', 'PostgreSQL', 'AWS'],
         imageUrl: '',
         sourceUrl: 'https://github.com/Adarsh0311/shopsphere-backend',
