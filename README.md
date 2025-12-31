@@ -1,7 +1,7 @@
 # Adarsh Kumar - Personal Portfolio
 This repository contains the source code for my personal portfolio website, built with Angular and styled with Tailwind CSS. This project showcases my skills and experience with modern web technologies and personal projects.
 
-[View Live Site](https://adarshkumar-dev.netlify.app/)
+[View Live Site](https://adarshkumar.dev/)
 
 <img width="1871" height="897" alt="image" src="https://github.com/user-attachments/assets/66689cf5-6599-4c35-936b-8ef1ce5ec051" />
 
