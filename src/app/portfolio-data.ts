@@ -38,7 +38,7 @@ export const experiences: Experience[] = [
     {
         company: 'Northwest Missouri State University',
         role: 'Graduate Assistant Software Developer',
-        period: 'JAN 2025 — PRESENT',
+        period: 'JAN 2025 — DEC 2025',
         companyUrl: 'https://www.nwmissouri.edu/',
         description: [
             'Engineered .NET Web APIs for a Canvas-integrated university platform, streamlining faculty textbook adoption for 5,500+ students.',

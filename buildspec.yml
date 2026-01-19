@@ -1,0 +1,11 @@
+phases:
+  build:
+    commands:
+      - echo "Build started on `date`"
+      - ng build --configuration production
+      - echo "Build completed on `date`"
+
+  post_build:
+    commands:
+      - aws s3 sync dist/your-app-name/ s3://$S3_BUCKET --delete
+      - aws cloudfront create-invalidation --distribution-id $DISTRUBUTION_ID --paths "/*"
