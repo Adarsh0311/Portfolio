@@ -1,4 +1,12 @@
+version: 0.2
+
 phases:
+  install:
+      runtime-versions:
+        nodejs: 18 # Specifies the runtime version
+      commands:
+        - echo "Installing dependencies..."
+        - npm install
   build:
     commands:
       - echo "Build started on `date`"
@@ -9,3 +17,8 @@ phases:
     commands:
       - aws s3 sync dist/your-app-name/ s3://$S3_BUCKET --delete
       - aws cloudfront create-invalidation --distribution-id $DISTRUBUTION_ID --paths "/*"
+
+  artifacts:
+    files:
+      - '**/*' # Packages all files in the source directory
+    base-directory: 'dist/browser' # Optional: packages files from the 'dist' directory
