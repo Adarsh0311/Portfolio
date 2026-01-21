@@ -8,12 +8,6 @@ phases:
       - echo "Installing dependencies..."
       - npm install
   
-    runtime-versions:
-      nodejs: 18
-    commands:
-      - echo "Installing dependencies..."
-      - npm install
-  
   build:
     commands:
       - echo "Build started on `date`"
