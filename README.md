@@ -9,7 +9,9 @@ This repository contains the source code for my personal portfolio website, buil
 ## Features
 - Single Page Application (SPA): A seamless, fast, and modern user experience built on the Angular framework.
 - Fully Responsive Design: The layout is optimized for all screen sizes, from mobile phones to desktop monitors.
-- CI/CD Pipeline: Deployed via Netlify with continuous integration and deployment connected directly to the main branch of this repository.
+- CI/CD Pipeline: AWS CodePipeline + CodeBuild for automated deployment to S3 with CloudFront cache invalidation.
+- Secure Custom Domain: HTTPS enabled via ACM with DNS managed through Route 53.
+
 
 
 ## 🏗️ System Architecture
@@ -22,7 +24,12 @@ The following diagram illustrates the production-grade AWS infrastructure for my
 ## Tech Stack
 - Frontend: Angular, TypeScript
 - Styling: Tailwind CSS
-- Deployment: Netlify
+- Hosting: AWS S3
+- CDN: CloudFront
+- DNS & SSL: Route 53, ACM
+- CI/CD: AWS CodePipeline, CodeBuild
+
+
 
 
 ## Running the Project Locally
