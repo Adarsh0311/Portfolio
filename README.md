@@ -12,6 +12,13 @@ This repository contains the source code for my personal portfolio website, buil
 - CI/CD Pipeline: Deployed via Netlify with continuous integration and deployment connected directly to the main branch of this repository.
 
 
+## 🏗️ System Architecture
+The following diagram illustrates the production-grade AWS infrastructure for my portfolio website.
+
+![Portfolio Architecture](https://github.com/user-attachments/assets/9087b0cb-883a-43ed-870f-a8e232907b9a)
+
+
+
 ## Tech Stack
 - Frontend: Angular, TypeScript
 - Styling: Tailwind CSS
