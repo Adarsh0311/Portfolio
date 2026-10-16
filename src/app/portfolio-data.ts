@@ -1,6 +1,3 @@
-import { signal, WritableSignal } from '@angular/core';
-
-// --- DATA MODELS ---
 export interface Experience {
     company: string;
     role: string;
@@ -11,13 +8,20 @@ export interface Experience {
 
 export interface Project {
     title: string;
+    category: string;
     description: string;
+    highlights: string[];
     tags: string[];
-    imageUrl: string;
-    liveUrl?: string;
     sourceUrl?: string;
-    enhancedDescription?: WritableSignal<string>;
-    isEnhancing?: WritableSignal<boolean>;
+    architectureUrl?: string;
+    liveUrl?: string;
+    detailsUrl?: string;
+}
+
+export interface Research {
+    title: string;
+    description: string;
+    methods: string[];
 }
 
 export interface Skill {
@@ -32,18 +36,35 @@ export interface Education {
     period: string;
 }
 
-// --- PORTFOLIO DATA ---
+export const navigation = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Selected projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'research', label: 'Research' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'education', label: 'Education' }
+];
 
 export const experiences: Experience[] = [
     {
+        company: 'COSMOS Research Center, UA Little Rock',
+        role: 'Software Engineer',
+        period: 'APR 2026 — PRESENT',
+        description: [
+            'Designed a configuration-driven React and TypeScript interface that unifies 12 data collection services, allowing new services to be onboarded through configuration changes.',
+            'Developed per-user job history, real-time status tracking, and Excel export with role-based access control for platform-wide administration.',
+            'Work on DataVerse with a Python/FastAPI backend and MongoDB, supporting social-media data collection and research workflows.'
+        ]
+    },
+    {
         company: 'Northwest Missouri State University',
-        role: 'Graduate Assistant Software Developer',
+        role: 'Software Developer (Graduate Assistant)',
         period: 'JAN 2025 — DEC 2025',
         companyUrl: 'https://www.nwmissouri.edu/',
         description: [
-            'Engineered .NET Web APIs for a Canvas-integrated university platform, streamlining faculty textbook adoption for 5,500+ students.',
-            'Automated faculty course selection and PDF generation using an ASP.NET Core MVC web app, reducing manual registrar workflows by 90%.',
-            'Built and optimized REST APIs with .NET Core and MySQL/Entity Framework to increase system performance and reliability.'
+            'Built .NET Web APIs integrating Canvas LMS and daily synchronization jobs for a course-material platform serving 5,500+ students.',
+            'Automated course selection, PDF generation, and registrar email delivery with ASP.NET Core MVC.',
+            'Developed REST APIs with MySQL and Entity Framework, and automated personalized welcome emails for newly enrolled students.'
         ]
     },
     {
@@ -52,9 +73,9 @@ export const experiences: Experience[] = [
         period: 'JAN 2023 — JUL 2024',
         companyUrl: 'https://www.qordata.com/',
         description: [
-            'Developed Java Spring Boot integrations with FTP, Salesforce, and Microsoft Graph API, optimizing data flows and improving load performance by 55%.',
-            'Delivered full-stack solutions with Angular 8 dashboards, providing real-time insights that improved decision-making speed by 75%.',
-            'Led unit testing and peer code reviews to reduce production bugs and ensure maintainable, production-ready releases.'
+            'Built Java Spring Boot integrations with Salesforce, Microsoft Graph API, and FTP to replace manual Excel-based data workflows.',
+            'Developed configurable compliance-monitoring workflows for 5+ pharmaceutical clients.',
+            'Built Angular and TypeScript dashboards with Highcharts to visualize monitoring activity across 4 teams and 15+ regions.'
         ]
     },
     {
@@ -63,54 +84,100 @@ export const experiences: Experience[] = [
         period: 'AUG 2021 — DEC 2022',
         companyUrl: 'https://www.qordata.com/',
         description: [
-            'Built and optimized Spring Boot backend services with relational databases to deliver complex client customizations on schedule.',
-            'Collaborated with cross-functional agile teams (QA, product managers, frontend engineers) to deliver high-quality features.',
-            'Achieved a perfect NPS score by focusing on innovative problem-solving, which significantly improved client satisfaction.'
+            'Built a document management module using AWS S3, IAM policies, and pre-signed URLs for temporary access to uploaded files.',
+            'Implemented dynamic request routing in a multi-tenant Spring Boot application across PostgreSQL and SQL Server.',
+            'Used JUnit, Mockito, and peer code reviews to improve backend reliability while collaborating with QA and product teams.'
         ]
-    }
-];
-
-export const skills: Skill[] = [
-       {
-        category: 'Languages & Databases',
-        technologies: ['Java', 'C#', 'TypeScript', 'JavaScript', 'Python', 'SQL', 'PostgreSQL', 'MySQL']
-    },
-    {
-        category: 'Frameworks & Libraries',
-        technologies: ['Spring Boot', '.NET Core', 'Node.js', 'Express', 'Angular']
-    },
-    {
-        category: 'Cloud, Tools & Methods',
-        technologies: ['AWS (EC2, S3, Lambda, SQS, SNS)', 'Git', 'CI/CD', 'JIRA', 'Agile/Scrum', 'Postman']
     }
 ];
 
 export const projects: Project[] = [
     {
-        title: 'Campus Inspection System',
-        description: 'Full-stack application built to digitize and manage facility inspections. The client is an Angular single-page application that provides Admin tools for user management and creating dynamic inspection checklists. The backend API, built with Node.js and Express, handles all data processing and authentication, leveraging Prisma as the ORM to manage the PostgreSQL database. The system enables field technicians and admins to perform and submit paperless inspection reports.',
-        tags: ['Node.js', 'Express', 'Prisma', 'TypeScript', 'Angular',  'PostgreSQL', 'Bootstrap', 'Full-Stack'],
-        imageUrl: '',
-        sourceUrl: 'https://github.com/Adarsh0311/campus-inspection-system'
+        title: 'Musify',
+        category: 'Personal project · Java & serverless AWS',
+        description: 'A music streaming application with a Spring Boot backend on AWS Lambda and a React/TypeScript frontend.',
+        highlights: [
+            'API Gateway routes requests to Lambda; DynamoDB stores track metadata.',
+            'Time-limited S3 URLs let the browser upload and stream audio directly, keeping media transfer out of the backend request path.'
+        ],
+        tags: ['Java', 'Spring Boot', 'React', 'TypeScript', 'Lambda', 'API Gateway', 'DynamoDB', 'S3'],
+        sourceUrl: 'https://github.com/Adarsh0311/Musify',
+        architectureUrl: 'https://github.com/Adarsh0311/Musify/blob/master/Musify_Architecture.png'
     },
     {
-        title: 'ShopSphere E-commerce Platform',
-        description: 'E-commerce platform built with Spring Boot & Angular. Features comprehensive product catalog, order management, Stripe payment integration, SQS messaging, and AWS deployment. Production-ready with PostgreSQL, RESTful API endpoints, and cloud infrastructure.',
-        tags: ['Java', 'Angular', 'Spring Boot', 'E-commerce', 'REST API', 'PostgreSQL', 'AWS'],
-        imageUrl: '',
-        sourceUrl: 'https://github.com/Adarsh0311/shopsphere-backend',
-        enhancedDescription: signal(''),
-        isEnhancing: signal(false)
+        title: 'Campus Inspection System',
+        category: 'University project · Full-stack delivery',
+        description: 'A paperless facility inspection application for technicians and administrators, replacing paper logs with digital checklists and building-level reports.',
+        highlights: [
+            'Built an Angular interface and Node.js/Express API with JWT authentication, Prisma, and PostgreSQL.',
+            'Deployed the API to EC2 and frontend to S3/CloudFront, with GitHub Actions automating deployments.'
+        ],
+        tags: ['Angular', 'TypeScript', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'AWS', 'GitHub Actions'],
+        sourceUrl: 'https://github.com/Adarsh0311/campus-inspection-system',
+        architectureUrl: 'https://github.com/Adarsh0311/campus-inspection-system/blob/master/docs/Architecture.jpeg'
+    },
+    {
+        title: 'DataVerse',
+        category: 'Professional work · COSMOS Research Center',
+        description: 'A research platform bringing social-media collection services into a shared interface for submitting, monitoring, and reviewing data collection jobs.',
+        highlights: [
+            'My contributions include a configuration-driven interface for 12 collection services, per-user job history, and Excel export.',
+            'Role-based access control supports administration and review of platform-wide jobs.'
+        ],
+        tags: ['React', 'TypeScript', 'Python', 'FastAPI', 'MongoDB', 'Role-based access'],
+        detailsUrl: '#research'
+    }
+];
+
+export const additionalProjects: Project[] = [
+    {
+        title: 'ShopSphere',
+        category: 'Personal project · E-commerce',
+        description: 'Spring Boot and Angular e-commerce application with a product catalog, order workflows, Stripe integration, and AWS SQS messaging.',
+        highlights: [],
+        tags: ['Java', 'Spring Boot', 'Angular', 'PostgreSQL', 'Stripe', 'SQS'],
+        sourceUrl: 'https://github.com/Adarsh0311/shopsphere-backend'
     },
     {
         title: 'Task Management Application',
-        description: 'A comprehensive task management backend system built with Spring Boot and PostgreSQL, featuring file attachments, dynamic filtering with JPA Specifications, and complete CRUD operations for efficient task organization.',
-        tags: ['Spring Boot', 'Java', 'PostgreSQL', 'Spring Data JPA', 'REST API', 'File Upload', 'Dynamic Filtering'],
-        imageUrl: '',
-        sourceUrl: 'https://github.com/Adarsh0311/task-management-application',
-        enhancedDescription: signal(''),
-        isEnhancing: signal(false)
+        category: 'Personal project · Backend APIs',
+        description: 'Spring Boot backend with file attachments and dynamic query filtering using JPA Specifications and PostgreSQL.',
+        highlights: [],
+        tags: ['Java', 'Spring Boot', 'Spring Data JPA', 'PostgreSQL'],
+        sourceUrl: 'https://github.com/Adarsh0311/task-management-application'
+    }
+];
+
+export const research: Research[] = [
+    {
+        title: 'Engineering tools for social-media research',
+        description: 'At COSMOS, I connect software engineering with research through DataVerse: supporting data collection, job monitoring, and structured exports so researchers can work with collected posts.',
+        methods: ['Data collection workflows', 'Research tooling', 'Access control']
     },
+    {
+        title: 'Iterative query expansion and keyword discovery',
+        description: 'I work on discovering useful search terms for social-media case studies. The workflow combines candidate extraction, LLM-assisted cleaning, and keyword ranking, with comparisons against TF-IDF, YAKE, KeyBERT, and LDA. Case studies include Arkansas data centers and the 2025 Nepal protests.',
+        methods: ['Python', 'NLP', 'Keyword ranking', 'Retrieval evaluation']
+    }
+];
+
+export const skills: Skill[] = [
+    {
+        category: 'Backend engineering',
+        technologies: ['Java / Spring Boot', 'C# / .NET Core', 'Python / FastAPI', 'Node.js / Express', 'REST APIs', 'JUnit / Mockito']
+    },
+    {
+        category: 'Frontend development',
+        technologies: ['TypeScript / JavaScript', 'React', 'Angular', 'HTML / CSS', 'Tailwind CSS']
+    },
+    {
+        category: 'Databases & persistence',
+        technologies: ['PostgreSQL / MySQL', 'SQL Server', 'MongoDB', 'DynamoDB', 'JPA / Hibernate', 'Prisma / Entity Framework']
+    },
+    {
+        category: 'AWS & delivery',
+        technologies: ['Lambda / API Gateway', 'S3 / CloudFront', 'EC2 / RDS', 'SQS / SNS', 'CodePipeline / CodeBuild', 'GitHub Actions', 'Git / Docker / Linux']
+    }
 ];
 
 export const education: Education[] = [
@@ -118,13 +185,12 @@ export const education: Education[] = [
         institution: 'Northwest Missouri State University',
         degree: 'Master of Science, Information Systems',
         link: 'https://www.nwmissouri.edu/',
-        period: 'Aug 2024 - Dec 2025'
+        period: 'AUG 2024 — DEC 2025'
     },
     {
         institution: 'National University of Computer and Emerging Sciences',
         degree: 'Bachelor of Science, Computer Science',
         link: 'https://www.nu.edu.pk/',
-        period: 'Aug 2017 - May 2021'
+        period: 'AUG 2017 — MAY 2021'
     }
 ];
-

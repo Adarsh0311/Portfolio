@@ -3,27 +3,28 @@ import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [AppComponent],
-    }).compileComponents();
+    await TestBed.configureTestingModule({ imports: [AppComponent] }).compileComponents();
   });
 
-  it('should create the app', () => {
+  it('creates the portfolio', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it(`should have the 'my-portfolio' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('my-portfolio');
-  });
-
-  it('should render title', () => {
+  it('renders the owner and professional positioning', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, my-portfolio');
+    const page = fixture.nativeElement as HTMLElement;
+    expect(page.querySelector('h1')?.textContent).toContain('Adarsh Kumar');
+    expect(page.textContent).toContain('Backend & Full-Stack Software Engineer');
+  });
+
+  it('offers contact without a resume download', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const page = fixture.nativeElement as HTMLElement;
+    expect(page.querySelector('a[href="mailto:adarshghai6@gmail.com"]')).toBeTruthy();
+    expect(page.querySelector('a[href$=".pdf"]')).toBeNull();
+    expect(page.textContent?.toLowerCase()).not.toContain('resume');
   });
 });
